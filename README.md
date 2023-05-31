@@ -1,7 +1,8 @@
 
 # Git Notes
 
-## ------------------------------Lesson 01------------------------------
+<h2 align="center">Lesson 01</h2>
+
 1. compare two files using the following command on command prompt:  
 ```bash
   FC file1.extension file2.extension
@@ -57,9 +58,11 @@ example:
 git config --global push.default upstream
 config --global merge.conflictstyle diff3
 ```
-## ------------------------------Lesson 02------------------------------
-1. Git stores its metadata about the logs of a repository in a directory named as `".git"`, which is a hidden folder.
-2. Set the Author's identity:
+
+<h2 align="center">Lesson 02</h2>
+
+1. Git stores its metadata about the logs of a repository in a directory named as `".git"`, which is a hidden folder.  
+2. Set the Author's identity:  
 ```bash
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
@@ -173,9 +176,11 @@ git cg
 git log -n max_commits_number
 ```
 29. When merging two commits that contains changes to the same lines of code, then you'll have to decide which chages to keep in this conflict.
-## ------------------------------Lesson 03------------------------------
-1. Create a remote repository in Github in your account.
-2. Copy the URL link to that remote repository.
+
+<h2 align="center">Lesson 03</h2>
+
+1. Create a remote repository in Github in your account.  
+2. Copy the URL link to that remote repository.  
 3. Connect the remote repository to your local PC repository:  
 ```bash
 git remote add any_name_for_the_remote the_URL_link_of_the_remote
@@ -194,6 +199,7 @@ git remote -v
 ```bash
 git push name_for_the_remote name_for_the_branch_to_push
 ```
+
 example:  
 ```bash
 git push tri_repo master
@@ -246,7 +252,9 @@ The base repository by default is the original repository (the merge pull reques
 19. Fast-Forward Merge doesn't work when merging in Github.
 
 20. If a merge of a pull request has a conflict with changes of other pull requests, then you'll have to fix that conflict in your own machine by pulling the remote master into local master (which will also update `origin/master`), fixing the conflict, merging local master into the branch of the pull request, then pushing that branch of the pull request.
-## --------------------------Additional notes---------------------------
+
+<h2 align="center">Additional notes</h2>
+
 1. Get remote repositories commits:  
 ```bash
 git remote update
@@ -258,4 +266,9 @@ git log --all --oneline --graph --decorate
 3. Copy a commit from a branch to the current branch:  
 ```bash
 git cherry-pick commit_id
+```
+4. If a commit is deleted in the local repository but has already been pushed to the remote repository, then the next push from the local repository to the remote should be `forced with lease`. This command discards the deleted commit in the remote repository, but guarantees its content to be in the new commit.  
+example:  
+```bash
+git push --force-with-lease tri_repo master
 ```
